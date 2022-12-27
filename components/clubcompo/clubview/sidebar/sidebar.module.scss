@@ -1,0 +1,148 @@
+@mixin flex_box($direction: row, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+  }
+
+.adspace{
+    @include flex_box();
+    flex: 0 0 auto;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    background-color: rgb(110, 110, 110,0.5);
+}
+// logo and banner 
+.team_logo{
+    margin: 1rem 0rem;
+    display: flex;
+    padding: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
+    background-color: rgb(32, 32, 32);
+    position: relative;
+    // overflow: hidden;
+    height: 15rem;
+    z-index: 1;
+    .logo{
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+        border-radius:0.5rem;                   
+        margin-right:1rem;
+        z-index: 1;
+        background-color: red;
+        
+    }
+    .backImg{
+        opacity: 1;
+        filter: brightness(0.5);
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        border-radius: 0.3rem;
+        object-fit: cover;
+        background-color: red;
+    }
+    h1{
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        z-index: 1;
+        word-break: break-all;
+        max-width: 90%;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: rgb(208, 208, 208);
+        text-shadow: 0px 0px 5px black;
+    }
+}
+
+.channel_container{
+    border-radius: 0.4rem;
+    margin: 0.2rem;
+    // width:550px;
+    // height: 100%;
+    .single_chanel{
+        border-radius: 0.3rem;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        display: flex;
+        text-transform: capitalize;
+        transform: 0.30s ease;
+        cursor: pointer;
+        color: rgb(222, 222, 222);
+        &:hover:not(.active){
+            color: rgb(117, 117, 117);
+            background-color: rgba(105, 105, 105, 0.203);
+            transform: 0.30s ease;
+        }
+    }
+    .active{
+        color: rgb(255, 255, 255);
+        background-color: rgba(105, 105, 105, 0.322);
+    }
+}
+
+.bottom_items{
+    padding: 0.3rem;
+    width: 100%;
+    margin-top: auto;
+    border-top: 2px solid rgba(255, 255, 255, 0.194);
+    background-color: rgba(44, 44, 44, 0.215);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    p{
+        margin-right: auto;
+    }
+}
+
+.backImg{
+    // display:
+    // position:
+    // z-index:1;
+}
+
+.add:hover{
+    background-color: rgba(105, 105, 105, 0.203);
+    border-radius: 3px;
+}
+.add{
+    display: flex;
+    align-items: center;
+    input{
+        width:100%;
+        background-color:rgba(105, 105, 105, 0.203);
+        padding:3px
+    }
+}
+
+.more_container{
+    margin: 1rem auto;
+    padding: 0.3rem;
+    width: 100%;
+}
+.invite_div{
+    @include flex_box();
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    gap: 0.3rem;
+    transition: 0.30s ease;
+    background-color: rgba(54, 54, 54, 0.895);
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(74, 74, 74);
+        transition: 0.30s ease;
+    }
+    svg{
+        padding: 0.1rem;
+    }
+}

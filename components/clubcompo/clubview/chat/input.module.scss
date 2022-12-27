@@ -1,0 +1,48 @@
+.input_container {
+    margin-top: auto;
+    padding: 0.5rem 0.1rem;
+    position: sticky;
+    width: 100%;
+    bottom: 0%;
+    right: 0rem;
+    
+    section {
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+        background-color: rgb(45, 45, 45);
+        margin: auto;
+        width: 90%;
+        display: flex;
+        input {
+            padding-inline: 0.2px;
+            width: 100%;
+            background-color: inherit;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+
+            &::placeholder {
+                opacity: 0.8;
+            }
+
+            &:focus::placeholder {
+                opacity: 0.5;
+                padding: 0.2rem;
+                transition: 0.30s ease;
+                font-size: 1rem;
+            }
+        }
+
+        button {
+            width: 2rem;
+            overflow: hidden;
+            margin-inline: 5px;
+            color: rgb(110, 110, 110);
+        }
+
+        .send_icon {
+            color: rgb(110, 110, 110);
+        }
+
+    }
+}

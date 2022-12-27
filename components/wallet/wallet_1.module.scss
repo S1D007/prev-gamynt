@@ -1,0 +1,96 @@
+@mixin flex_box($direction: row, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+  }
+  @mixin gradtext {
+    background:linear-gradient(to bottom,rgb(255, 253, 253), rgb(107, 106, 106)) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.1px rgba(224, 224, 224, 0.32);
+  }
+
+.wallet_card_box {
+    margin: 2rem auto;
+    width: min(400px, 90%);
+    height: 10rem;
+    background: linear-gradient(45deg, rgba(0, 115, 255, 0.7), rgba(255, 0, 170, 0.7));
+    border-radius: 0.6rem;
+    box-shadow: 0px 0px 6px black;
+    display: flex;
+    flex-direction: column;
+
+    nav {
+        padding: 0.1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            @include gradtext ();
+            font-weight: 900;
+            letter-spacing: 1px;
+            font-size: clamp(1.1rem , calc(0.9rem + 1vw ) , 1.5rem);
+            text-transform: capitalize;
+        }
+
+        .box_container {
+            width: 2rem;
+            height: 3rem;
+            position: relative;
+
+            div {
+                position: absolute;
+                width: 1.6em;
+                aspect-ratio: 1/1;
+                background-color: red;
+                top: 20%;
+                left: 1rem;
+                border-radius: 50%;
+                opacity: 0.8;
+            }
+
+            .ui_box_2 {
+                left: 2rem;
+                background-color: orange;
+            }
+
+            .ui_box_3 {
+                left: 3rem;
+                background-color: rgb(0, 200, 255);
+            }
+        }
+    }
+}
+
+.balance{
+    @include  flex_box(row , space-between);
+    font-weight: 500;
+    padding: 0rem 1rem;
+    gap: 1rem;
+    font-size: clamp(1rem , calc(0.9rem + 1vw ) , 1.3rem);
+    text-transform: capitalize;
+    h1{
+        @include gradtext();
+    }
+    p{
+        @include gradtext();
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+}
+.withdraw_btn{
+    margin: auto auto 0.5rem;
+    padding: 0.2rem 1rem;
+    color: rgb(212, 212, 212);
+    background-color: rgba(138, 138, 138, 0.11);
+    backdrop-filter: blur(50px
+    );
+    transition: 0.30s ease;
+    &:hover{
+        @include gradtext();
+        box-shadow: 0px 0px 10px rgba(154, 0, 26, 0.15);
+        transition: 0.30s ease;
+    }
+}

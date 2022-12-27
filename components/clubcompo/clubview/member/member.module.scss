@@ -1,0 +1,50 @@
+@mixin status($bg:rgb(177, 246, 117)) {
+       position: absolute;
+        bottom: 5px;
+        right: 0px;
+        width: 0.8rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: $bg;
+}
+.member_container{
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+}
+
+.single_member{
+    background-color: #212121;
+    margin: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.member_image{
+    position: relative;
+    border-radius: 0.4rem;
+    img{
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+    }
+    .status_online{
+        @include status();
+    }
+}
+.member_info{
+    width: 80%;
+    h1{
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 1.1rem;
+        font-weight: 500;
+        max-width: 100%;
+    }
+}

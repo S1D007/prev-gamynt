@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+
+.post_container{
+  display: grid;
+  grid-template-columns: repeat(autofit , minmax(200px , 1fr));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card{
+  // width: min(45rem , 100%);
+  width: 20rem;
+  height: auto;
+  background: #1a1d2fad;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px ;
+  box-shadow: rgba(0, 0, 0) 1px 25px 25px -15px;
+}
+
+.card_img_holder{
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.card_img_holder img{
+  width: 100%;
+  height: fit-content;
+  max-height: 15rem;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.blog_tittle{
+  margin: 0.2rem 0rem;
+  h3{
+    margin: 0.5rem 0rem;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+
+.options{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  div{
+    margin: 0.5rem 0rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .club_logo{
+      width: 40px;
+      height: 40px;
+      background-color: antiquewhite;
+      border-radius: 100px  ;
+    }
+  }
+  p{
+    text-transform: capitalize;
+  }
+  
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2rem;
+    svg{
+      transition: 0.30s ease;
+      padding: 0.3rem;
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.176);
+      }
+    }
+    button{
+      padding: 0.5rem;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.249) inset;
+      width: 100%;
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+      font-size: 1.2rem;
+      background: #1488CC; 
+      background: linear-gradient(to right, #2f37c7, #1991d7); 
+      opacity: 1;
+
+      &:hover{
+        transition: 3s ease;
+        // opacity: 1;
+        background: linear-gradient(to right, #313adc, #236f9b); 
+      }
+    }
+  }
+}
+
+.chip *{
+  // display: flex;
+  margin: 5px;
+}

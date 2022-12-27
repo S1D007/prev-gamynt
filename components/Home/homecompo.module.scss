@@ -1,0 +1,72 @@
+.post_main , .profile_main{
+    margin: 0.3rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    height: calc(100vh - 3.5rem);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.profile_main{
+    width: 22rem;
+}
+.post_main::-webkit-scrollbar , .profile_main::-webkit-scrollbar{
+    margin: 2rem;
+    width: 0px;
+}
+.post_main::-webkit-scrollbar-thumb,.profile_main::-webkit-scrollbar-thumb{
+    background-color: rgb(84, 84, 84);
+    border-radius: 11rem;
+}
+.post_main{
+    flex: 2;
+}
+
+@media (max-width:950px){
+    .post_main , .profile_main{
+        margin-top: 3rem;
+        height: calc(100vh - 6rem);
+    }
+}
+@media (max-width:750px){
+    .profile_main{
+        display: none;
+    }
+}
+
+.my_club_box{
+    margin: 1rem;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: rgba(0, 0, 0) 1px 25px 25px -15px;
+    border-radius: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.285);
+    img{
+        border-radius: 50%;
+        object-fit: cover;
+        width: 2.5rem;
+        height: 2.5rem;
+        // aspect-ratio: 1/1;
+    }
+    p{
+        font-weight: bold;
+        font-size: 1rem;
+    }
+}
+.post_main h1{
+    margin-top: 20px;
+}
+
+.ads{
+    background-color: rgba(0, 255, 255, 0.584);
+    height: 10rem;
+    margin: 4%;
+    border-radius: 30px;
+}
+.ads1{
+    background-color: rgba(255, 90, 90, 0.416);
+    height: 10rem;
+    margin: 4%;
+    border-radius: 30px;
+}

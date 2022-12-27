@@ -1,0 +1,22 @@
+@mixin flex_box($direction: row, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+}
+.top_nav{
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 3.5rem;
+    width: 100%;
+    background-color: rgb(57, 56, 56);
+    z-index: 50;
+    @include flex_box();
+    nav{
+        padding-inline: 1.5rem;
+        width: 100%;
+        @include flex_box();
+        justify-content: space-between;
+    }
+}

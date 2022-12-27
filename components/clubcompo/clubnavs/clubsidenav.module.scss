@@ -1,0 +1,95 @@
+@mixin flex_box($direction: row, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+}
+
+.nav_main {
+    background-color: black;
+    height: 100vh;
+    overflow-x: visible;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_main::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.back_btn {
+    margin: 0.2rem auto;
+    padding: 0.3rem 0.1rem;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: rgba(50, 50, 50, 0.751);
+    transition: 0.30s ease;
+
+    &:hover {
+        background-color: rgb(30, 30, 30);
+        transition: 0.30s ease;
+    }
+
+    p {
+        border-radius: 0.3rem;
+        padding: 0.2rem 0.5rem;
+        top: 100%;
+        position: absolute;
+        transition: 0.30s ease;
+        background-color: rgb(91, 91, 91);
+        transform: scale(0);
+        opacity: 0.9;
+    }
+
+    &:hover p {
+        transition-delay: 2s;
+        transition: 0.30s ease;
+        transform: scale(1);
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        color: orange;
+    }
+}
+
+
+.channel_container {
+    @include flex_box( column );
+    gap: 0.5rem;
+}
+.channel_box{
+    flex: 0 0 fit-content;
+    border-radius: 10%;
+    @include flex_box();
+    position: relative;
+    background-color: rgba(201, 201, 201, 0.322);
+    transition: 0.30s ease;
+    cursor: pointer;
+    
+    p{
+        position: absolute;
+        right: -7rem;
+        background-color: black;
+        z-index: 100;
+        transition: 0.30s ease;
+        transform: scale(0);
+        transform-origin:0px 50% ;
+        padding: 0.2rem 0.7rem;
+        border-radius: 0.3rem;
+    }
+    &:hover{
+        background-color: rgba(62, 58, 58, 0.217);
+    }
+    &:hover p{
+        transition: 0.30s ease;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,177 @@
+@mixin flex_column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_container_loader {
+    @include flex_column_center;
+    height: 100vh;
+    position: relative;
+
+    img {
+        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+        transition: 1s ease;
+        width: min(550px , 80%);
+        height: max-content;
+        animation: flicker 1s infinite ease;
+    }
+
+    input {
+        width: min(550px, 50%);
+        margin: 1rem;
+        color: rgba(var(--secondry-color-rgb), 1);
+        accent-color: rgba(var(--secondry-color-rgb), 1);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    ;
+
+    10% {
+        opacity: 0.9;
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.scrolldiv_main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.logo_scrolldiv {
+    margin: auto;
+    width: min(600px, 90%);
+    text-align: center;
+    position: relative;
+}
+
+.logo_scrolldiv img {
+    margin: 1rem auto;
+    width: min(550px , 80%);
+    height: max-content;
+}
+
+.logo_scrolldiv::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 16%;
+    aspect-ratio: 1/1;
+    background-color: rgba(75, 4, 4, 0.14);
+    transform: rotate(45deg);
+    animation: move 10s ease infinite;
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+@keyframes move {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.logo_scrolldiv p {
+    opacity: 0.9;
+    line-height: 1.2rem;
+    font-size: 1rem;
+}
+
+.scroll_container {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 100vw;
+    min-height: 12rem;
+    overflow-x: auto;
+
+    img {
+        flex: 0 0 fit-content;
+        border-radius: 0.3rem;
+        min-width: 6rem;
+        max-height: 12rem;
+    }
+}
+
+.scroll_container::-webkit-scrollbar {
+    width: 0px;
+    height: 2px;
+}
+
+.scroll_container::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--secondry-color-rgb), 1);
+    border-radius: 5rem;
+
+}
+
+.signup_btn {
+    padding: 0.6rem;
+    margin: 1rem auto 3rem;
+    width: min(230px, 90%);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    border-radius: 0.3rem;
+    box-shadow: 0px 7px 21px rgba(var(--secondry-color-rgb), 0.45);
+    opacity: 0.9;
+    background: var(--logo-grad);
+}
+
+.signup_btn:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 21px rgba(var(--secondry-color-rgb), 0.8);
+}
+
+.signup_btn:active {
+    transform: scale(1.05);
+}
+
+@media (max-width:750px) {
+    .scroll_container {
+        padding-left: 12%;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+}

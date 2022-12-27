@@ -1,0 +1,155 @@
+@mixin flex_box($direction: row, $justify: center , $align:center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }
+
+  @mixin absolute_pos ($bg:rgb(245, 91, 91)){
+    position: absolute;
+    background-color: $bg;
+    width: 150px;
+    height: 150px;
+    filter: blur(120px);
+  }
+
+.clubs_container{
+    margin: auto;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(350px , 1fr));
+    width: min(1400px , 100%);
+    gap: 2rem;
+    position: relative;
+}
+.ui_1{
+    @include absolute_pos(rgb(3, 152, 3));
+    top: 0%;
+    left:0%;
+}
+.ui_2{
+    @include absolute_pos( rgb(77, 139, 255));
+    bottom:0%;
+    right: 0%;
+}
+
+.club_box{
+    padding: 1rem;
+    @include flex_box(column);
+    background: #1a1d2fad;
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0) 1px 25px 25px -15px;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    .bg_img{
+        margin: 0.5rem ;
+        top: 0%;
+        right: 0%;
+        width: 100%;
+        height: 10rem;
+        background-color: rgba(31, 31, 31, 0.384);
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            border: 0px;
+            border-radius: 1rem;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+    }
+    img{
+        margin: 0rem 1rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.144);
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.363);
+        backdrop-filter: blur(50px);
+    }
+    div{
+        width: 99%;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        p{
+            font-size: 0.95rem;
+            width: 100%;
+            height: 1.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            // text-overflow: ;
+        }
+        button{
+            position: absolute;
+            bottom: -25px;
+            right:-50px;
+            padding: 0.3rem 3rem 2.5rem 4.5rem;
+            transform: rotate(-45deg);
+            background-color: rgba(110,110,110,0.2);
+        }
+    }
+}
+
+.club_name{
+    margin: 0.5rem 0rem;
+    margin-top: 5rem;
+    display: flex;
+    gap: 0.5rem;
+    height: 2rem;
+    h1{
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+    svg{
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #00d0ffba;  /* fallback for old browsers */
+        // background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+        // background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    }
+}
+
+.member_status{
+       margin: 1rem  0rem;
+        @include flex_box( row, flex-start);
+        gap: 10%;
+        width: 100%;
+        li{
+            list-style: none;
+            @include flex_box();
+            gap: 0.5rem;
+
+            span{
+                display: block;
+                width: 13px;
+                aspect-ratio: 0.5/0.5;
+                border-radius: 50%;
+                background-color: rgb(6, 234, 109);
+            }
+        }
+}
+
+@media (max-width:750px) {
+    .clubs_container{
+@include flex_box(column);
+    }
+    .club_box{
+        width: 90vw;
+    }
+    .member_status{
+        gap: 3vw;
+    }
+}
+
+

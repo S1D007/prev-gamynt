@@ -1,0 +1,71 @@
+@import "../../../styles/helper.scss" ;
+@mixin gradtext {
+    background:linear-gradient(to bottom,rgb(255, 253, 253), rgb(107, 106, 106)) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.1px rgba(224, 224, 224, 0.32);
+  }
+
+.top_featured_main{
+    margin: 1rem 0rem;
+    text-transform: capitalize;
+    header{
+        h1{
+            @include gradtext();
+            font-size: 1.1rem;
+            font-size: clamp(1rem , calc(1rem + 1vw) , 1.5rem);
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+    }
+}
+.channerl_container{
+    padding: 1rem 1rem 2rem;
+    @include flex_box(row , flex-start);
+    gap: 1rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+        width: 0px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgb(83, 83, 83);
+        border-radius: 11rem;
+    }
+    div{
+        flex: 0 0 fit-content;
+        position: relative;
+        transition: 0.30s ease;
+        cursor: pointer;
+
+
+        img{
+            transition: 0.30s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: min(100px , 50%);
+            aspect-ratio: 1/1;
+            background-color: rgb(57, 57, 57);
+            width: min( 120px , 100%);
+        }
+        p{
+            bottom: -2rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.5rem;
+            transition: 0.30s ease;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.505);
+            backdrop-filter: blur(50px);
+            transform-origin:50% 0%;
+            transform: scale(0);
+        }
+        &:hover p{
+            transform: scale(1);
+        }
+        &:hover img{
+            transform: scale(0.95);
+            opacity: 0.8;
+            background-color: rgb(63, 62, 62);
+        }
+    }
+}

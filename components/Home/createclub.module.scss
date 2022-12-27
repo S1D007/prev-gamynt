@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clubContainer{
+    background-color: #191b28a9;
+    width: 40rem;
+    height: 45rem;
+    margin: 100px auto ;
+    border-radius: 20px;
+    box-shadow: rgba(255, 31, 76, 0.68) 0px 5px 10px 1px, rgba(255, 31, 102, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 53, 0.1) 0px 20px, rgba(240, 46, 46, 0.05) 0px 25px;
+}
+
+.form{
+    padding:30px
+}
+
+.avatar_container{
+    display: flex;
+    justify-content: center;
+}
+
+.avatar{
+    label{
+        // @include flex_box();
+        padding: 3rem 0.5rem;
+        border-radius: 1rem;
+        border: 1px solid #eee;
+        border-style: dashed;
+    }
+    cursor: pointer;
+    input{
+        // display: none;
+    }
+    width: 100px;
+    height: 100px;
+    background-color: #121212;
+    border-radius: 50px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

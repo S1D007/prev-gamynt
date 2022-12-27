@@ -1,0 +1,60 @@
+
+.chat_container {
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // background:rgb(54,57,63);
+}
+.chat_container::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+
+.chat_recieve , .chat_send{
+    margin: 0.3rem;
+    padding: 01rem;
+    width: fit-content;
+    max-width: 90%;
+    border-radius: 0.5rem;
+    // backdrop-filter: blur(10px);
+
+    div {
+        
+        display: flex;
+        align-items: center;
+        h1{
+            color: rgb(215, 215, 215);
+            font-weight: 600;
+        }
+        span {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            display: block;
+            margin: 0.3rem 1rem;
+        }
+    }
+    p{
+        margin: 0rem 0rem 0rem 2rem;
+    }
+}
+// .chat_recieve {
+//    margin-right: auto;
+//    background: linear-gradient(45deg , rgba(100, 100, 100, 0.418) , rgba(58, 58, 58, 0.226));
+    
+// }
+.chat_send{
+    margin-left: auto;
+    background: linear-gradient(45deg , rgba(74, 74, 74, 0.418) , rgba(109, 108, 108, 0.11));
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+}
+
+.avatar{
+    width:40px;
+    margin-right:5px;
+    border-radius:50px
+}

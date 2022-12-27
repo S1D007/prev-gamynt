@@ -1,0 +1,41 @@
+.container{
+    margin:4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 2px 4px, rgba(255, 255, 255, 0.01) 0px 7px 13px -3px, rgba(0, 0, 0, 0.5) 10px -3px 0px inset;
+    border-radius: 20px;
+}
+.container img{
+    border-radius: 20px;
+}
+
+.container h1{
+    transform: rotate(-90);
+    -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  margin-right: -50px;
+padding: -20px;
+}
+
+@media (max-width:650px){
+    .container img{
+        width: 20rem;
+        margin-left: 15px;
+    }
+    .container h1{
+        font-size: 13px;
+        // margin-right: 1px;
+    }
+}

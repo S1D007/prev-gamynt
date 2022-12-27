@@ -1,0 +1,51 @@
+@mixin flex_box($direction:row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_box{
+    margin:0.5rem auto ;
+    border: 1px solid #eee;
+    background-color: var(--secondry-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    img{
+        height: max-content;
+        width: 100%;
+        object-fit: contain;
+    }
+    p{
+        margin: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+    button{
+        padding:0.5rem 1rem;
+        border-radius: 10rem;
+        margin: 0.5rem;
+        margin-left: auto;
+       background: var(--logo-grad);
+       opacity: 0.8;
+       color: var(--light-font);
+
+       &:hover{
+        opacity: 1;
+       }
+    }
+}
+
+.profile_box{
+    @include flex_box(column);
+    background-color: #0d0d0d;
+    box-shadow: rgba(0, 0, 0) 1px 25px 25px -15px;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    gap:1rem;
+    button{
+        padding:0.3rem 0.5rem;
+        border-radius: 12rem;
+        font-size: 0.7rem;
+    }
+}

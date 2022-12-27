@@ -1,0 +1,46 @@
+@mixin flex_box($direction: row, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+  }
+  @mixin gradtext {
+    // background:linear-gradient(to bottom,rgb(255, 253, 253), rgb(107, 106, 106)) ;
+    background:linear-gradient(to bottom , rgba(45, 171, 255, 0.845), rgba(3, 71, 116, 0.731)) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.1px rgba(224, 224, 224, 0.32);
+  }
+.error_main{
+    padding: 2rem 1rem;
+    position: relative;
+    height: calc(100vh - 3.5rem);
+    display: grid;
+    place-items: center;
+}
+.error_container{
+    @include  flex_box(column);
+    text-transform: uppercase;
+    h1{
+        @include gradtext();
+        // font-size: clamp(1rem , calc(1rem + 1vw) 11rem);
+        font-size: 8rem;
+        font-weight: bold;
+
+    }
+    p{
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        font-size: 1rem;
+    }
+    small{
+        display: block;
+    }
+    button{
+        margin: 1rem 0.5rem;
+        padding: 0.5rem 2rem;
+        background-color: rgba(3, 121, 199, 0.838);
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+}
